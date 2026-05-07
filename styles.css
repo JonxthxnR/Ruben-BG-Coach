@@ -1511,3 +1511,104 @@ body {
   .discipline-pillars { grid-template-columns: 1fr; }
   .hero-pillars { gap: 8px; }
 }
+
+/* ============================================
+   CERTIFICACIONES
+   ============================================ */
+.certs {
+  padding: 100px 60px;
+  border-top: 1px solid var(--border);
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 28px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--neon-orange), var(--neon-purple));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cert-card:hover {
+  border-color: rgba(255, 162, 73, 0.35);
+  transform: translateX(6px);
+  box-shadow: var(--glow-orange);
+}
+
+.cert-card:hover::before {
+  opacity: 1;
+}
+
+.cert-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cert-info {
+  flex: 1;
+}
+
+.cert-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-white);
+  margin-bottom: 4px;
+}
+
+.cert-org {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--neon-orange);
+  margin-bottom: 4px;
+}
+
+.cert-year {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.cert-badge {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 255, 229, 0.1);
+  border: 1px solid rgba(0, 255, 229, 0.3);
+  color: var(--neon-cyan);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .certs { padding: 70px 24px; }
+  .certs-grid { grid-template-columns: 1fr; }
+}
