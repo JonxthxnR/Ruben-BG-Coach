@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruben.BG.Coach</title>
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-  <!-- CURSOR -->
+  <!-- ===================== -->
+  <!-- CURSOR PERSONALIZADO  -->
+  <!-- ===================== -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursorTrail"></div>
 
-  <!-- NAV -->
+
+  <!-- ===================== -->
+  <!-- NAVEGACIÓN            -->
+  <!-- ===================== -->
   <nav class="nav" id="nav">
     <div class="nav-logo">Ruben.bg<span>.coach</span></div>
+
     <ul class="nav-links">
       <li><a href="#hero">Inicio</a></li>
-      <li><a href="#clients">Resultados</a></li>
+      <!-- <li><a href="#clients">Resultados</a></li> -->
+      <li><a href="#certs">Certificaciones</a></li>
       <li><a href="#pricing">Planes</a></li>
     </ul>
+
     <a href="#pricing" class="nav-cta">¿Listo para empezar?</a>
   </nav>
 
-  <!-- ======================== -->
-  <!-- SECCIÓN 1: PRESENTACIÓN  -->
-  <!-- ======================== -->
+
+  <!-- ===================== -->
+  <!-- SECCIÓN: HERO         -->
+  <!-- ===================== -->
   <section id="hero" class="hero">
+
+    <!-- Decoración de fondo -->
     <div class="hero-bg-grid"></div>
     <div class="hero-orb orb-1"></div>
     <div class="hero-orb orb-2"></div>
     <div class="hero-orb orb-3"></div>
 
     <div class="hero-content">
+
+      <!-- Texto principal -->
       <div class="hero-text">
         <div class="hero-tag reveal">Programa de Transformación Integral</div>
+
         <h1 class="hero-title reveal">
           <span class="line">VUÉLVETE</span>
           <span class="line">TU MEJOR</span>
           <span class="line accent-line">VERSIÓN.</span>
           <span class="line accent-line">NUNCA ES TARDE.</span>
         </h1>
+
         <p class="hero-desc reveal">
-          Yo, <strong>Ruben BG</strong> creo firmemente que el entrenamiento no es solo para el corto plazo — es una <strong>inversión para toda la vida</strong>. A mis 40 años, no solo estoy buscando mi mejor versión física, sino también mi desarrollo personal. <strong>Te invito a recorrer este camino.</strong>
+          Yo, <strong>Ruben BG</strong> creo firmemente que el entrenamiento no es solo para el corto plazo —
+          es una <strong>inversión para toda la vida</strong>. A mis 40 años, no solo estoy buscando mi mejor
+          versión física, sino también mi desarrollo personal. <strong>Te invito a recorrer este camino.</strong>
         </p>
+
+        <!-- Pilares del servicio -->
         <div class="hero-pillars reveal">
           <div class="pillar">
             <span class="pillar-icon">🏋️</span>
@@ -61,9 +85,11 @@
             <span>Seguimiento continuo</span>
           </div>
         </div>
+
+        <!-- Estadísticas animadas -->
         <div class="hero-stats reveal">
           <div class="stat">
-            <span class="stat-num" data-target="999">0</span><span>+</span>
+            <span class="stat-num" data-target="15">0</span><span>+</span>
             <p>Clientes transformados</p>
           </div>
           <div class="stat-divider"></div>
@@ -73,16 +99,19 @@
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num" data-target="10000">0</span><span>%</span>
+            <span class="stat-num" data-target="100">0</span><span>%</span>
             <p>Tasa de éxito</p>
           </div>
         </div>
+
+        <!-- Botones de acción -->
         <div class="hero-ctas reveal">
           <a href="#pricing" class="btn-primary">Ver planes →</a>
-          <a href="#clients" class="btn-ghost">Ver resultados</a>
+          <a href="#certs" class="btn-ghost">Ver certificaciones</a>
         </div>
       </div>
 
+      <!-- Visual del coach -->
       <div class="hero-visual reveal">
         <div class="trainer-frame">
           <div class="trainer-photo-main">
@@ -92,39 +121,50 @@
             </div>
           </div>
           <div class="trainer-photo-secondary">
-            <img src="Images/coach/foto-calistenia.webp" alt="foto de Ruben BG haciendo calistenia" />
+            <img src="Images/coach/foto-calistenia.webp" alt="Foto de Ruben BG haciendo calistenia" />
           </div>
           <div class="trainer-photo-third">
-            <img src="Images/coach/foto-coach.webp" alt="foto de Ruben BG" />
-            </div>
+            <img src="Images/coach/foto-coach.webp" alt="Foto de Ruben BG" />
           </div>
-          <div class="floating-tag tag-1"> Fuerza</div>
-          <div class="floating-tag tag-2"> Bajar de peso</div>
-          <div class="floating-tag tag-3"> Nutrición</div>
         </div>
+
+        <!-- Tags flotantes -->
+        <div class="floating-tag tag-1">Fuerza</div>
+        <div class="floating-tag tag-2">Bajar de peso</div>
+        <div class="floating-tag tag-3">Nutrición</div>
       </div>
+
     </div>
 
+    <!-- Indicador de scroll -->
     <div class="scroll-indicator">
       <span>scroll</span>
       <div class="scroll-line"></div>
     </div>
+
   </section>
 
-  <!-- ======================== -->
-  <!-- SECCIÓN DISCIPLINA        -->
-  <!-- (entre hero y resultados) -->
-  <!-- ======================== -->
+
+  <!-- ===================== -->
+  <!-- SECCIÓN: FILOSOFÍA    -->
+  <!-- ===================== -->
   <section class="discipline">
     <div class="discipline-orb"></div>
+
     <div class="discipline-content">
       <div class="discipline-label reveal">Nuestra filosofía</div>
+
       <blockquote class="discipline-quote reveal">
-        "En Alpha+40 no creemos en atajos,<br>sino en el <span class="neon-text">compromiso constante.</span>"
+        "En Alpha+40 no creemos en atajos,<br>
+        sino en el <span class="neon-text">compromiso constante.</span>"
       </blockquote>
+
       <p class="discipline-body reveal">
-        Te brindamos estructura y te ayudamos a mantenerte enfocado, porque la verdadera transformación sucede cuando la disciplina es parte de tu día a día.
+        Te brindamos estructura y te ayudamos a mantenerte enfocado, porque la verdadera
+        transformación sucede cuando la disciplina es parte de tu día a día.
       </p>
+
+      <!-- Los 3 pilares de la disciplina -->
       <div class="discipline-pillars reveal">
         <div class="disc-pillar">
           <div class="disc-num">01</div>
@@ -148,15 +188,20 @@
           </div>
         </div>
       </div>
+
       <p class="discipline-explication reveal">
-        Monitoreamos tu progreso con evaluaciones antromotetricas para ajustar tu plan y asegurar que estas quemando grasa y ganando músculo viendo resultados reales 
+        Monitoreamos tu progreso con evaluaciones antropométricas para ajustar tu plan
+        y asegurar que estás quemando grasa y ganando músculo, viendo resultados reales.
       </p>
     </div>
   </section>
 
-  <!-- ======================== -->
-  <!-- SECCIÓN 2: CLIENTES      -->
-  <!-- ======================== -->
+
+  <!-- ===================================== -->
+  <!-- SECCIÓN: CLIENTES (desactivada)       -->
+  <!-- Descomentar cuando haya fotos reales  -->
+  <!-- ===================================== -->
+  <!--
   <section id="clients" class="clients">
     <div class="section-header">
       <div class="section-tag reveal">Resultados reales</div>
@@ -217,6 +262,7 @@
             <div class="stars">★★★★★</div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -226,156 +272,215 @@
       <button class="carousel-btn" id="nextBtn">→</button>
     </div>
   </section>
+  -->
 
-  <!-- ======================== -->
-  <!-- SECCIÓN 4: CERTIFICACIONES       -->
-  <!-- ======================== -->
-<section class="certs">
-  <div class="section-header">
-    <div class="section-tag reveal">RESPALDADO POR CONOCIMIENTO</div>
-    <h2 class="section-title reveal"><span class="neon-text">CONOCIMIENTO CERTIFICADO</span> POR DISTINTAS ASOCIACIONES</h2>
-    <p class="section-desc reveal">Cada plan que diseño tiene detrás inversion en formación certificada.</p>
-  </div>
 
-  <div class="certs-grid reveal">
+  <!-- ===================== -->
+  <!-- SECCIÓN: CERTS        -->
+  <!-- ===================== -->
+  <section id="certs" class="certs">
 
-    <div class="cert-card">
-      <div class="cert-icon">
-        <img src  = "" alt="Icono de certificación de entrenador personal" />
-      </div>
-      <div class="cert-info">
-        <div class="cert-title">Certificacion 1</div>
-        <div class="cert-org">Entidad certificante</div>
-        <div class="cert-year">fecha de certificacion</div>
-      </div>
-      <div class="cert-badge">✓</div>
+    <div class="section-header">
+      <div class="section-tag reveal">Respaldado por conocimiento</div>
+      <h2 class="section-title reveal">
+        <span class="neon-text">CONOCIMIENTO CERTIFICADO</span> POR DISTINTAS ASOCIACIONES
+      </h2>
+      <p class="section-desc reveal">Cada plan que diseño tiene detrás inversión en formación certificada.</p>
     </div>
 
-    <div class="cert-card">
-      <div class="cert-icon">
-        <img src  = "Images/certificaciones/Certificacion-Hiit.jpeg" alt="Icono de certificación de entrenador personal" />
+    <div class="certs-grid reveal">
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <img src="Images/certificaciones/Personal-trainer-e-instructor-de-musculacion.webp"
+               alt="Certificación Personal Trainer e Instructor de Musculación" />
+        </div>
+        <div class="cert-info">
+          <div class="cert-title">Personal Trainer e Instructor de Musculación</div>
+          <div class="cert-org">Gualda Training</div>
+          <div class="cert-year">30-12-2024</div>
+        </div>
+        <div class="cert-badge">✓</div>
       </div>
-      <div class="cert-info">
-        <div class="cert-title">Instructor de entrenamiento funcional, HIIT y GAP</div>
-        <div class="cert-org">Gualda Training</div>
-        <div class="cert-year">20-10-2025</div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <img src="Images/certificaciones/Certificacion-Hiit.webp"
+               alt="Certificación Instructor de Entrenamiento Funcional, HIIT y GAP" />
+        </div>
+        <div class="cert-info">
+          <div class="cert-title">Instructor de Entrenamiento Funcional, HIIT y GAP</div>
+          <div class="cert-org">Gualda Training</div>
+          <div class="cert-year">20-10-2025</div>
+        </div>
+        <div class="cert-badge">✓</div>
       </div>
-      <div class="cert-badge">✓</div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <img src="Images/certificaciones/Nutricion-deportiva.webp"
+               alt="Certificación Nutrición Deportiva" />
+        </div>
+        <div class="cert-info">
+          <div class="cert-title">Nutrición Deportiva</div>
+          <div class="cert-org">Gualda Training</div>
+          <div class="cert-year">01-05-2026</div>
+        </div>
+        <div class="cert-badge">✓</div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="cert-card">
-      <div class="cert-icon">
-        <img src  = "" alt="Icono de certificación de entrenador personal" />
-      </div>
-      <div class="cert-info">
-        <div class="cert-title">Certificacion 3</div>
-        <div class="cert-org">Ente certificante</div>
-        <div class="cert-year">fecha de certificacion</div>
-      </div>
-      <div class="cert-badge">✓</div>
-    </div>
 
-    <div class="cert-card">
-      <div class="cert-icon">
-        <img src  = "" alt="Icono de certificación de entrenador personal" />
-      </div>
-      <div class="cert-info">
-        <div class="cert-title">Nutricion deportiva?</div>
-        <div class="cert-org">Ente certificante</div>
-        <div class="cert-year">2026</div>
-      </div>
-      <div class="cert-badge">✓</div>
-    </div>
-
-  </div>
-</section>  
-
-  <!-- ======================== -->
-  <!-- SECCIÓN 3: PRECIOS       -->
-  <!-- ======================== -->
+  <!-- ===================== -->
+  <!-- SECCIÓN: PRECIOS      -->
+  <!-- ===================== -->
   <section id="pricing" class="pricing">
+
+    <!-- Decoración de fondo -->
     <div class="pricing-bg-orb orb-p1"></div>
     <div class="pricing-bg-orb orb-p2"></div>
 
     <div class="section-header">
-      <div class="section-tag reveal">Planes Ruben BG</div>
+      <div class="section-tag reveal">Planes Alpha+40</div>
       <h2 class="section-title reveal">ELIGE TU <span class="neon-text">NIVEL.</span></h2>
-      <p class="section-desc reveal">Tan simple como mandar un mensaje y <strong>cambiar tu vida.</strong></p>
+      <p class="section-desc reveal">
+        <strong>Alpha+40</strong> es un programa diseñado para mujeres y hombres de entre 20 y 50 años.<br>
+        El objetivo del programa es lograr una pérdida de peso realista entre
+        <strong>6 y 12 kg de grasa en 3 meses</strong>, dependiendo del peso inicial y del compromiso de la persona.
+      </p>
     </div>
 
-    <div class="pricing-cards reveal"> 
+    <div class="pricing-cards reveal">
 
+      <!-- Plan Online -->
       <div class="price-card">
         <div class="price-card-glow"></div>
-        <div class="price-tier">MOTIVADO</div>
+        <div class="price-tier">Plan Online</div>
         <div class="price-amount">
           <span class="currency">$</span>
-          <span class="amount">10.000</span>
-          <span class="period">/Año</span>
+          <span class="amount">40.000</span>
+          <span class="period">/Primer mes</span>
         </div>
-        <div class="price-desc">Perfecto para dar el primer paso hacia tu transformación.</div>
+        <div class="price-quarterly">
+          <span class="currency-small">$</span>
+          <span class="amount-small">80.000</span>
+          <span class="period-small">/Trimestral</span>
+        </div>
+        <div class="price-desc">
+          Pensado para personas con experiencia entrenando o para quienes viven en otra
+          ciudad y no pueden asistir de forma presencial.
+        </div>
         <ul class="price-features">
-          <li><span class="check">✓</span> Plan de entrenamiento mensual</li>
-          <li><span class="check">✓</span> Guía nutricional básica</li>
-          <li><span class="check">✓</span> Nomas escribo</li>
-          <li><span class="check">✓</span> Esto para</li>
-          <li class="disabled"><span>✗</span> Que vea </li>
-          <li class="disabled"><span>✗</span> Como se veria </li>
+          <li><span class="check">✓</span> Evaluación inicial</li>
+          <li><span class="check">✓</span> Asesoramiento personalizado</li>
+          <li><span class="check">✓</span> Planificación de entrenamiento</li>
+          <li><span class="check">✓</span> Seguimiento continuo</li>
+          <li><span class="check">✓</span> Ajustes según progreso</li>
+          <li class="disabled"><span>✗</span> Clases presenciales</li>
         </ul>
-        <a href="#" class="price-btn ghost-btn">Empezar →</a>
+        <a href="https://wa.me/56932123523?text=Hola,%20me%20interesa%20el%20plan%20Online."
+           class="price-btn ghost-btn" target="_blank" rel="noopener">
+          Quiero el plan Online →
+        </a>
       </div>
 
-      <div class="price-card popular">
-        <div class="price-card-glow"></div>
-        <div class="popular-badge"> MÁS CONVENIENTE</div>
-        <div class="price-tier"></div>
-        <div class="price-amount">
-          <span class="currency">$</span>
-          <span class="amount">20.000</span>
-          <span class="period">/Año</span>
-        </div>
-        <div class="price-desc">El plan completo para transformar tu cuerpo.</div>
-        <ul class="price-features">
-          <li><span class="check">✓</span> Plan de entrenamiento personalizado</li>
-          <li><span class="check">✓</span> Asesoría en nutrición personalizada</li>
-          <li><span class="check">✓</span> sesiones virtuales</li>
-          <li><span class="check">✓</span> Seguimiento continuo de progreso</li>
-          <li><span class="check">✓</span> Evaluaciones de composición corporal</li>
-          <li><span class="check">✓</span> Soporte ilimitado siempre que lo necesites</li>
-        </ul>
-        <a href="#" class="price-btn neon-btn">Quiero este →</a>
-      </div>
-
+      <!-- Plan Alpha+40 -->
       <div class="price-card elite">
         <div class="price-card-glow"></div>
-        <div class="price-tier">DICIPLINADO</div>
+        <div class="price-tier">ALPHA+40</div>
         <div class="price-amount">
           <span class="currency">$</span>
-          <span class="amount">30.000</span>
-          <span class="period">/Año</span>
+          <span class="amount">50.000</span>
+          <span class="period">/Mensual</span>
         </div>
-        <div class="price-desc">Acceso total. Para quienes van completamente en serio.</div>
+        <div class="price-quarterly">
+          <span class="currency-small">$</span>
+          <span class="amount-small">150.000</span>
+          <span class="period-small">/Total Trimestral</span>
+        </div>
+        <div class="price-desc">
+          Plan enfocado principalmente en personas principiantes o con sobrepeso que buscan
+          una recomposición corporal: ganar masa muscular y perder grasa corporal.
+        </div>
         <ul class="price-features">
-          <li><span class="check gold">✓</span> Todo lo del plan ALPHA</li>
-          <li><span class="check gold">✓</span> La verdad no sabria que mejorar</li>
-          <li><span class="check gold">✓</span> Pero supongamos</li>
-          <li><span class="check gold">✓</span> Que aca existe un planazo</li>
+          <li><span class="check">✓</span> Una clase presencial al mes</li>
+          <li><span class="check">✓</span> Planificación personalizada de entrenamiento</li>
+          <li><span class="check">✓</span> Cambio y ajuste de rutina mensual</li>
+          <li><span class="check">✓</span> Monitoreo continuo</li>
+          <li><span class="check">✓</span> Acompañamiento constante</li>
+          <li><span class="check">✓</span> Entrevista inicial online o presencial</li>
+          <li><span class="check">✓</span> Asesoramiento integral en:</li>
+          <li><span class="check">✓</span> Entrenamiento</li>
+          <li><span class="check">✓</span> Nutrición</li>
+          <li><span class="check">✓</span> Hábitos saludables</li>
+          <li><span class="check">✓</span> Valores</li>
         </ul>
-        <a href="#" class="price-btn gold-btn">Ir al ELITE →</a>
+        <a href="https://wa.me/56932123523?text=Hola,%20me%20interesa%20el%20plan%20Alpha%20%2B40."
+           class="price-btn neon-btn" target="_blank" rel="noopener">
+          Quiero el Alpha+40 →
+        </a>
+      </div>
+
+      <!-- Plan Alpha+40 Extendido (destacado) -->
+      <div class="price-card popular">
+        <div class="popular-badge">MÁS CONVENIENTE</div>
+        <div class="price-card-glow"></div>
+        <div class="price-tier">ALPHA+40 <br> EXTENDIDO</div>
+        <div class="price-amount">
+          <span class="currency">$</span>
+          <span class="amount">40.000</span>
+          <span class="period">/Mensual</span>
+        </div>
+        <div class="price-quarterly">
+          <span class="currency-small">$</span>
+          <span class="amount-small">240.000</span>
+          <span class="period-small">/Total Semestral</span>
+        </div>
+        <div class="price-desc">
+          Mismos beneficios del plan trimestral, con mayor continuidad y seguimiento a largo plazo.
+        </div>
+        <ul class="price-features">
+          <li><span class="check gold">✓</span> Una clase presencial al mes</li>
+          <li><span class="check gold">✓</span> Planificación personalizada de entrenamiento</li>
+          <li><span class="check gold">✓</span> Cambio y ajuste de rutina mensual</li>
+          <li><span class="check gold">✓</span> Monitoreo continuo</li>
+          <li><span class="check gold">✓</span> Acompañamiento constante</li>
+          <li><span class="check gold">✓</span> Entrevista inicial online o presencial</li>
+          <li><span class="check gold">✓</span> Asesoramiento integral en:</li>
+          <li><span class="check gold">✓</span> Entrenamiento</li>
+          <li><span class="check gold">✓</span> Nutrición</li>
+          <li><span class="check gold">✓</span> Hábitos saludables</li>
+          <li><span class="check gold">✓</span> Valores</li>
+        </ul>
+        <a href="https://wa.me/56932123523?text=Hola,%20me%20interesa%20el%20plan%20Alpha%20%2B40%20extendido."
+           class="price-btn gold-btn" target="_blank" rel="noopener">
+          Ir al EXTENDIDO →
+        </a>
       </div>
 
     </div>
 
     <div class="pricing-note reveal">
-      <p>💬 ¿No sabes qué plan elegir? <a href="https://wa.me/+56932123523" target="_blank">Habla conmigo directamente</a> — te ayudo a elegir como llegar a tu mejor version.</p>
+      <p>
+        💬 ¿No sabes qué plan elegir?
+        <a href="https://wa.me/56932123523" target="_blank">Habla conmigo directamente</a>
+        — te ayudo a elegir cómo llegar a tu mejor versión.
+      </p>
     </div>
+
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- ===================== -->
+  <!-- FOOTER                -->
+  <!-- ===================== -->
   <footer class="footer">
     <div class="footer-logo">Ruben.bg<span>.coach</span></div>
   </footer>
 
   <script src="main.js"></script>
+
 </body>
 </html>
