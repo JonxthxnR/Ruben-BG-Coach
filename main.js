@@ -1,21 +1,11 @@
-/* =============================================
-   APEX TRAINING — main.js
-   - Custom cursor
-   - Scroll reveal
-   - Counter animation
-   - Carousel infinito (clone trick, sin salto)
-   - Nav scroll effect
-   - Burbujas flotantes WSP + IG
-   ============================================= */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ============================
-  // CONFIGURA TUS DATOS AQUÍ
-  // ============================
-  const WSP_NUMBER  = '56932123523';   // Número sin + ni espacios
+  const WSP_NUMBER  = '56932123523';
   const WSP_MESSAGE = encodeURIComponent('¡Holaa! Vi tu página y me gustaria inscribirme al programa.');
-  const IG_USER     = 'ruben.bg.coach';  // Sin @
+  const IG_USER     = 'ruben.bg.coach';
+
+  // DETECCIÓN DE MÓVIL: desactivamos cosas pesadas
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   // ============================
   // 1. CURSOR PERSONALIZADO
@@ -23,42 +13,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.getElementById('cursor');
   const trail  = document.getElementById('cursorTrail');
 
-  let mouseX = 0, mouseY = 0;
-  let trailX = 0, trailY = 0;
+  if (!isTouchDevice) {
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX - 6 + 'px';
-    cursor.style.top  = mouseY - 6 + 'px';
-  });
-
-  function animateTrail() {
-    trailX += (mouseX - trailX) * 0.12;
-    trailY += (mouseY - trailY) * 0.12;
-    trail.style.left = trailX - 16 + 'px';
-    trail.style.top  = trailY - 16 + 'px';
-    requestAnimationFrame(animateTrail);
-  }
-  animateTrail();
-
-  function refreshCursorTargets() {
-    document.querySelectorAll('a, button, .client-card, .price-card, .contact-bubble').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2)';
-        cursor.style.background = 'var(--neon-orange)';
-        trail.style.borderColor = 'var(--neon-orange)';
-        trail.style.transform = 'scale(1.5)';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursor.style.background = 'var(--neon-cyan)';
-        trail.style.borderColor = 'var(--neon-purple)';
-        trail.style.transform = 'scale(1)';
-      });
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.left = mouseX - 6 + 'px';
+      cursor.style.top  = mouseY - 6 + 'px';
     });
+
+    function animateTrail() {
+      trailX += (mouseX - trailX) * 0.12;
+      trailY += (mouseY - trailY) * 0.12;
+      trail.style.left = trailX - 16 + 'px';
+      trail.style.top  = trailY - 16 + 'px';
+      requestAnimationFrame(animateTrail);
+    }
+    animateTrail();
+
+    function refreshCursorTargets() {
+      document.querySelectorAll('a, button, .client-card, .price-card, .contact-bubble').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'scale(2)';
+          cursor.style.background = 'var(--neon-orange)';
+          trail.style.borderColor = 'var(--neon-orange)';
+          trail.style.transform = 'scale(1.5)';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'scale(1)';
+          cursor.style.background = 'var(--neon-cyan)';
+          trail.style.borderColor = 'var(--neon-purple)';
+          trail.style.transform = 'scale(1)';
+        });
+      });
+    }
+    refreshCursorTargets();
+  } else {
+    // Si es móvil, nos deshacemos de esto
+    if (cursor) cursor.style.display = 'none';
+    if (trail) trail.style.display = 'none';
   }
-  refreshCursorTargets();
 
   // ============================
   // 2. NAV — efecto scroll
@@ -108,11 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ============================
   // 5. CARRUSEL INFINITO
-  //    Clone trick: clona todas
-  //    las cards al inicio y al
-  //    final. Cuando se llega a
-  //    un clon, se salta sin
-  //    animacion al original.
   // ============================
   const track    = document.getElementById('clientsTrack');
   const prevBtn  = document.getElementById('prevBtn');
@@ -124,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const originalCards = Array.from(track.querySelectorAll('.client-card'));
     const total = originalCards.length;
 
-    // Clonar y pegar: [clones-fin | originales | clones-inicio]
     originalCards.forEach(c => {
       const cloneEnd = c.cloneNode(true);
       cloneEnd.setAttribute('aria-hidden', 'true');
@@ -136,14 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
       track.insertBefore(cloneStart, track.firstChild);
     });
 
-    // Empezamos en la primera card real (después de los clones del inicio)
     let currentIndex    = total;
     let isTransitioning = false;
     let autoplayTimer   = null;
     let isDragging      = false;
     let startX          = 0;
 
-    // Dots (solo los reales)
     originalCards.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.classList.add('dot');
@@ -181,12 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
       updateDots();
 
       setTimeout(() => {
-        // Llegamos a clones del final → saltar al inicio real sin animación
         if (currentIndex >= total * 2) {
           currentIndex = total;
           setPosition(currentIndex, false);
         }
-        // Llegamos a clones del inicio → saltar al final real sin animación
         if (currentIndex < total) {
           currentIndex = total * 2 - 1;
           setPosition(currentIndex, false);
@@ -199,14 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function next() { goTo(currentIndex + 1); resetAutoplay(); }
     function prev() { goTo(currentIndex - 1); resetAutoplay(); }
 
-    // Burbujas infinitas: ambos botones siempre activos
     prevBtn.style.opacity = '1';
     nextBtn.style.opacity = '1';
 
     prevBtn.addEventListener('click', prev);
     nextBtn.addEventListener('click', next);
 
-    // Drag (mouse)
     track.addEventListener('mousedown', e => {
       isDragging = true;
       startX = e.clientX;
@@ -220,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
       else { setPosition(currentIndex, true); }
     });
 
-    // Swipe (touch)
     track.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
     }, { passive: true });
@@ -229,13 +212,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
     });
 
-    // Teclado
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  prev();
       if (e.key === 'ArrowRight') next();
     });
 
-    // Autoplay
     function startAutoplay() {
       autoplayTimer = setInterval(next, 4500);
     }
@@ -248,23 +229,29 @@ document.addEventListener('DOMContentLoaded', () => {
     updateDots();
     startAutoplay();
 
+    requestAnimationFrame(() => {
+      track.classList.add('ready');
+    });
+
     window.addEventListener('resize', () => setPosition(currentIndex, false));
   }
 
   // ============================
   // 6. PARALLAX ORBS
   // ============================
-  const orbs = document.querySelectorAll('.hero-orb');
-  window.addEventListener('mousemove', (e) => {
-    const cx = window.innerWidth  / 2;
-    const cy = window.innerHeight / 2;
-    const dx = (e.clientX - cx) / cx;
-    const dy = (e.clientY - cy) / cy;
-    orbs.forEach((orb, i) => {
-      const f = (i + 1) * 12;
-      orb.style.transform = `translate(${dx * f}px, ${dy * f}px)`;
+  if (!isTouchDevice) {
+    const orbs = document.querySelectorAll('.hero-orb');
+    window.addEventListener('mousemove', (e) => {
+      const cx = window.innerWidth  / 2;
+      const cy = window.innerHeight / 2;
+      const dx = (e.clientX - cx) / cx;
+      const dy = (e.clientY - cy) / cy;
+      orbs.forEach((orb, i) => {
+        const f = (i + 1) * 12;
+        orb.style.transform = `translate(${dx * f}px, ${dy * f}px)`;
+      });
     });
-  });
+  }
 
   // ============================
   // 7. FLOATING TAGS
@@ -277,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. GLITCH HERO
   // ============================
   const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle) {
+  if (heroTitle && !isTouchDevice) {
     heroTitle.addEventListener('mouseenter', () => {
       heroTitle.style.textShadow = `2px 0 var(--neon-cyan), -2px 0 var(--neon-pink)`;
       setTimeout(() => { heroTitle.style.textShadow = ''; }, 200);
@@ -286,11 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ============================
   // 9. BURBUJAS DE CONTACTO
-  //    WSP + Instagram
   // ============================
   const bubblesHTML = `
     <div class="contact-bubbles" id="contactBubbles">
-
       <a class="contact-bubble wsp-bubble"
          href="https://wa.me/${WSP_NUMBER}?text=${WSP_MESSAGE}"
          target="_blank" rel="noopener"
@@ -317,12 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="bubble-tooltip">Sígueme en Instagram</div>
         <div class="bubble-pulse"></div>
       </a>
-
     </div>
   `;
-
   document.body.insertAdjacentHTML('beforeend', bubblesHTML);
-
-  refreshCursorTargets();
 
 });
