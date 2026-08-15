@@ -339,3 +339,73 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ==================================
+   CAJA DE MEJORA (UPSELL) PLANES
+   ================================== */
+.price-addon {
+  background: rgba(0, 255, 229, 0.05);
+  border: 1px dashed var(--neon-cyan);
+  border-radius: 6px;
+  padding: 14px;
+  margin-bottom: 24px;
+  text-align: left;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.price-addon:hover {
+  background: rgba(0, 255, 229, 0.1);
+  border-style: solid;
+  box-shadow: var(--glow-cyan);
+}
+
+.addon-title {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addon-price {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-white);
+  background: var(--bg-deep);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.price-addon p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.price-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subtle-link {
+  display: block;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-underline-offset: 4px;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.subtle-link:hover {
+  color: var(--neon-cyan);
+  text-decoration-color: var(--neon-cyan);
+}
